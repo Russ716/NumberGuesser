@@ -4,24 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Guess the secret number!");
-        for (int i = 0; 1 < 4; i++)
+        int secretNumber = 42;
+        int maxGuesses = 4;
+        for (int i = 1; i <= maxGuesses; i++)
         {
-
+            Console.WriteLine("Guess the secret number! You have " + (maxGuesses - i + 1) + " guesses remaining.");
             Console.Write("Enter your guess: ");
-            string guess = Console.ReadLine();
-            int parsedGuess = int.Parse(guess);
-            // Console.WriteLine("Your guess was: " + guess);
-            int num = 42;
-            if (num == parsedGuess)
+            int guess = int.Parse(Console.ReadLine());
+            if (guess == secretNumber)
             {
-                Console.WriteLine("You got it!");
+                Console.WriteLine("Congratulations, you guessed the secret number!");
+                return;
+            }
+            else if (i == maxGuesses)
+            {
+                Console.WriteLine("Sorry, you are out of guesses. The secret number was: " + secretNumber);
             }
             else
             {
-                Console.WriteLine("Guess again.");
+                Console.WriteLine("Sorry, your guess is incorrect. Please try again.");
             }
-
         }
     }
 }
