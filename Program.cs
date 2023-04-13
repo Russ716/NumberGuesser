@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace NumberGuesser
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        Console.WriteLine("Guess the secret number!");
+        Console.Write("Enter your guess: ");
+        string guess = Console.ReadLine();
+        Console.WriteLine("Your guess was: " + guess);
     }
 }
