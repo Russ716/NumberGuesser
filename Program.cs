@@ -9,7 +9,7 @@ class Program
         for (int i = 1; i <= maxGuesses; i++)
         {
             Console.WriteLine("Guess the secret number! You have " + (maxGuesses - i + 1) + " guesses remaining.");
-            Console.Write("Enter your guess: ");
+            Console.Write($"Enter guess #{i}: ");
             int guess = int.Parse(Console.ReadLine());
             if (guess == secretNumber)
             {
